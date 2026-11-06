@@ -1,0 +1,462 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#090909"><title>Himan Capital Finance | Cyber Cafe Portal</title>
+<style>
+:root{--bg:#090909;--panel:#151515;--panel2:#1c1a16;--gold:#d8ad55;--gold2:#f3d58b;--text:#f7f3e9;--muted:#aaa397;--line:#40351f;--red:#d97777;--green:#82c69b}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 80% 0,#2a2112 0,transparent 35%),var(--bg);color:var(--text);font:14px/1.55 system-ui,Arial,sans-serif}button,input,select,textarea{font:inherit}button{cursor:pointer}.app{display:grid;grid-template-columns:250px 1fr;min-height:100vh}.side{background:#0d0d0d;border-right:1px solid var(--line);padding:22px 15px;position:sticky;top:0;height:100vh;overflow:auto}.logo{padding:4px 10px 24px;color:var(--gold2);font-weight:900;letter-spacing:1px;font-size:17px}.logo small{display:block;color:#93866c;font-size:10px;letter-spacing:2px}.navgroup{color:#887b62;font-size:10px;text-transform:uppercase;letter-spacing:2px;padding:14px 10px 7px}.nav button{display:flex;align-items:center;gap:11px;width:100%;padding:11px 12px;background:none;border:0;color:#c9c2b5;text-align:left;border-radius:9px;margin:2px 0}.nav button:hover,.nav button.active{background:linear-gradient(90deg,#3a2d17,#211b11);color:var(--gold2)}.nav .ico{width:20px;text-align:center}.main{min-width:0}.top{height:68px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 28px;background:#090909cc;position:sticky;top:0;z-index:5;backdrop-filter:blur(10px)}.top strong{color:var(--gold2)}.content{padding:28px;max-width:1400px;margin:auto}.pagehead{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:22px}.pagehead h1{font-size:26px;margin:0;color:var(--gold2)}.sub{color:var(--muted);margin-top:4px}.btn{border:1px solid var(--gold);background:linear-gradient(135deg,var(--gold2),var(--gold));color:#17120a;padding:10px 15px;border-radius:8px;font-weight:750}.btn.secondary{background:#211b11;color:var(--gold2)}.btn.danger{background:#351b1b;color:#ffc4c4;border-color:#754040}.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:20px}.card,.panel{background:linear-gradient(145deg,#1b1a17,#111);border:1px solid var(--line);border-radius:13px;padding:18px}.stat{color:var(--muted);font-size:12px}.num{font-size:29px;font-weight:850;color:var(--gold2);margin-top:5px}.grid2{display:grid;grid-template-columns:1.15fr .85fr;gap:16px}.panel h3{margin:0 0 14px;color:var(--gold2)}.quick{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.quick button{padding:16px 10px;border:1px solid #453820;background:#17140f;color:#e9d9b5;border-radius:10px;text-align:left}.quick button span{display:block;font-size:22px;margin-bottom:7px}.quick button:hover{border-color:var(--gold);background:#241d12}.notice{border:1px solid #6b552d;background:#211b10;color:#e8d5aa;padding:12px 14px;border-radius:9px;margin-bottom:18px}.muted{color:var(--muted)}.formgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.field{display:grid;gap:5px}.field.full{grid-column:1/-1}label{font-size:12px;color:#d9c99f}input,select,textarea{width:100%;background:#0b0b0b;border:1px solid #4a402c;color:#fff;border-radius:8px;padding:11px}textarea{min-height:90px;resize:vertical}.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:14px}.tablewrap{overflow:auto}table{border-collapse:collapse;width:100%;min-width:600px}th,td{text-align:left;padding:11px 9px;border-bottom:1px solid #30291e;font-size:12px}th{color:var(--gold2);font-weight:700}td{color:#ddd}.pill{border-radius:30px;padding:3px 8px;background:#2b2417;color:#e9d39f;font-size:11px}.empty{color:#948d80;padding:20px;text-align:center}.hidden{display:none!important}.preview{background:white;color:#111;padding:22px;border-radius:8px;min-height:150px}.preview img{max-width:100%;max-height:180px;object-fit:contain}.toolbar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}.foot{color:#7f786d;text-align:center;font-size:11px;padding:30px 0}.mobilemenu{display:none}
+@media(max-width:900px){.app{grid-template-columns:1fr}.side{position:fixed;z-index:20;left:-270px;width:250px;transition:.2s}.side.open{left:0}.mobilemenu{display:inline-block}.cards{grid-template-columns:repeat(2,1fr)}.grid2{grid-template-columns:1fr}.content{padding:18px}.top{padding:0 16px}}
+@media(max-width:540px){.cards{grid-template-columns:1fr 1fr;gap:8px}.card{padding:13px}.num{font-size:23px}.formgrid{grid-template-columns:1fr}.field.full{grid-column:auto}.quick{grid-template-columns:repeat(2,1fr)}.pagehead{align-items:flex-start;flex-direction:column}}
+@media print{.side,.top,.no-print,.pagehead,.foot{display:none!important}.app{display:block}.content{padding:0}.preview{border:0}}
+
+.project-sheet{background:#fff;color:#202020;min-height:1050px;max-width:790px;margin:18px auto;padding:34px;font-family:Georgia,'Noto Serif Bengali',serif;box-shadow:0 3px 18px #0003}
+.project-frame{border:5px double var(--pc);min-height:970px;padding:34px 28px;text-align:center}
+.project-frame:before{content:'✦  ❖  ✦  ❖  ✦';display:block;color:var(--pc);font-size:23px;letter-spacing:8px;margin-bottom:28px}
+.project-frame:after{content:'✦  ❖  ✦  ❖  ✦';display:block;color:var(--pc);font-size:23px;letter-spacing:8px;margin-top:28px}
+.project-kicker{font:700 15px Arial,sans-serif;letter-spacing:3px;color:var(--pc);text-transform:uppercase}
+.project-title{font-size:31px;line-height:1.3;margin:30px 0 12px;color:#202020;overflow-wrap:anywhere}
+.project-subject{font-size:19px;color:var(--pc);font-weight:bold;margin:18px 0 40px}
+.project-art{font-size:48px;color:var(--pc);margin:22px}
+.project-meta{margin:55px auto 0;display:grid;grid-template-columns:1fr 1fr;gap:18px;text-align:left;max-width:520px;font:15px/1.6 Arial,sans-serif}
+.project-meta div{border-bottom:1px solid #bbb;padding:8px 3px}.project-meta b{color:var(--pc)}
+.project-school{font-size:23px;font-weight:bold;margin:22px 0;color:var(--pc)}
+@media print{.project-sheet{box-shadow:none;margin:0;max-width:none;min-height:0;padding:10mm}.project-frame{min-height:265mm}}
+@media(max-width:700px){.project-sheet{padding:12px;min-height:0}.project-frame{min-height:700px;padding:18px 12px}.project-title{font-size:24px}.project-meta{grid-template-columns:1fr}}
+
+
+.ay-preview-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.ay-side{background:#fff;color:#111;border:1px solid #ddd;border-radius:8px;padding:8px;text-align:center;min-width:0}
+.ay-side img{width:100%;height:180px;object-fit:contain;background:#f5f5f5}
+.ay-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.ay-card-pair{background:#fff;color:#111;padding:12px;border-radius:8px;display:grid;grid-template-columns:1fr 1fr;gap:8px;position:relative}
+.ay-card-pair img{width:100%;aspect-ratio:1.585;object-fit:contain;border:1px solid #aaa}
+.ay-card-pair button{grid-column:1/-1}
+.ay-print-sheet{background:#fff;color:#111;width:210mm;min-height:297mm;padding:8mm;display:grid;grid-template-columns:repeat(2,85.6mm);grid-auto-rows:54mm;gap:4mm;align-content:start;justify-content:center}
+.ay-print-item{width:85.6mm;height:54mm;overflow:hidden;border:0.15mm solid #bbb}
+.ay-print-item img{width:100%;height:100%;object-fit:fill;display:block}
+@media(max-width:650px){.ay-preview-grid,.ay-list{grid-template-columns:1fr}}
+@media print{body.ay-printing *{visibility:hidden!important}body.ay-printing #ayprintroot,body.ay-printing #ayprintroot *{visibility:visible!important}body.ay-printing #ayprintroot{position:absolute;left:0;top:0}}
+
+
+@page{size:A4 portrait;margin:0}
+
+
+.im-preview{margin-top:16px;padding:14px;background:#0b0b0b;border:1px solid #4a402c;border-radius:10px;display:flex;gap:18px;align-items:flex-start;flex-wrap:wrap}
+.im-preview canvas{max-width:min(100%,320px);height:auto;background:#fff;border:1px solid #8b754c}
+
+</style><script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script></head>
+<body>
+<div class="app">
+<aside class="side" id="sidebar"><div class="logo">HIMAN CAPITAL FINANCE<small>DIGITAL SERVICE & CAFE PORTAL</small></div><nav class="nav">
+<div class="navgroup">Overview</div><button class="active" data-page="dashboard"><span class="ico">▦</span>Dashboard</button>
+<div class="navgroup">Document Studio</div><button data-page="a4"><span class="ico">▤</span>Document A4 Maker</button><button data-page="idcard"><span class="ico">▣</span>ID Card A4 Maker</button><button data-page="photo"><span class="ico">📷</span>Passport Photo Maker</button><button data-page="cv"><span class="ico">📄</span>CV Maker</button><button data-page="handwriting"><span class="ico">✍</span>Handwriting to Word</button><button data-page="ready"><span class="ico">🗂</span>Ready-made Documents</button>
+<div class="navgroup">Image & PDF Studio</div><button data-page="imagestudio"><span class="ico">🖼️</span>Image & Signature Studio</button>
+<div class="navgroup">Government ID Print Studio</div><button data-page="ayushman"><span class="ico">🪪</span>Ayushman Card Print PRO</button>
+<div class="navgroup">Project & Art Studio</div><button data-page="projectstudio"><span class="ico">🎨</span>School / College Project Studio</button>
+<div class="navgroup">Shop Management</div><button data-page="customers"><span class="ico">♙</span>Customer Management</button><button data-page="jobs"><span class="ico">◷</span>Job History & Search</button><button data-page="print"><span class="ico">🖨</span>Print Management</button><button data-page="online"><span class="ico">🌐</span>Online Services & Schemes</button><button data-page="loans"><span class="ico">₹</span>Loan Applications</button>
+<div class="navgroup">Administration</div><button data-page="backup"><span class="ico">☁</span>Admin & Backup</button>
+</nav></aside>
+<main class="main"><header class="top"><div><button class="btn secondary mobilemenu" id="menu">☰</button> <strong>Black & Gold Workspace</strong></div><div class="muted" id="today"></div></header><div class="content">
+<div id="page"></div><div class="foot">© <span id="year"></span> Himan Capital Finance · Local demo workspace</div>
+</div></main></div>
+<script>
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const KEY='hcf_portal_v1';
+let db=JSON.parse(localStorage.getItem(KEY)||'{"customers":[],"jobs":[],"loans":[],"prints":[]}');
+function save(){localStorage.setItem(KEY,JSON.stringify(db));render()}
+function esc(s=''){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+const pages={
+dashboard:()=>`<div class="pagehead"><div><h1>Dashboard</h1><div class="sub">আপনার সাইবার ক্যাফের কাজ এক জায়গা থেকে পরিচালনা করুন</div></div><button class="btn" onclick="go('jobs')">＋ New Job</button></div>
+<div class="notice">🔒 এটি একটি লোকাল ডেমো। ডেটা এই ব্রাউজারের Local Storage-এ থাকে। বাস্তব গ্রাহকের Aadhaar, PAN, OTP, ব্যাংক তথ্য বা সংবেদনশীল ডকুমেন্ট এখানে সংরক্ষণ করবেন না।</div>
+<div class="cards"><div class="card"><div class="stat">Total Customers</div><div class="num">${db.customers.length}</div></div><div class="card"><div class="stat">Total Jobs</div><div class="num">${db.jobs.length}</div></div><div class="card"><div class="stat">Loan Enquiries</div><div class="num">${db.loans.length}</div></div><div class="card"><div class="stat">Print Queue</div><div class="num">${db.prints.length}</div></div></div>
+<div class="grid2"><div class="panel"><h3>Quick Access</h3><div class="quick"><button onclick="go('a4')"><span>▤</span>A4 Maker</button><button onclick="go('idcard')"><span>▣</span>ID Card Sheet</button><button onclick="go('photo')"><span>📷</span>Photo Maker</button><button onclick="go('cv')"><span>📄</span>CV Maker</button><button onclick="go('ready')"><span>🗂</span>Ready Documents</button><button onclick="go('customers')"><span>♙</span>Customers</button></div></div><div class="panel"><h3>Recent Jobs</h3>${db.jobs.slice(-5).reverse().map(j=>`<p>• ${esc(j.title)} <span class="pill">${esc(j.status)}</span></p>`).join('')||'<div class="empty">এখনও কোনো কাজ যোগ হয়নি</div>'}</div></div>`,
+a4:()=>maker('Document A4 Maker','A4 পেজে টেক্সট/ডকুমেন্ট সাজিয়ে প্রিন্ট বা PDF করুন','document'),
+idcard:()=>`<div class="pagehead"><div><h1>ID Card A4 Maker</h1><div class="sub">একাধিক ID কার্ডের ছবি A4 শিটে সাজান</div></div></div><div class="panel"><div class="formgrid"><div class="field"><label>ID Card Image</label><input id="idfiles" type="file" accept="image/*" multiple></div><div class="field"><label>Cards per row</label><select id="idcols"><option>2</option><option>3</option><option>4</option></select></div></div><div class="actions"><button class="btn" onclick="idPreview()">Create A4 Sheet</button><button class="btn secondary" onclick="printArea('idpreview')">Print / Save PDF</button></div><div id="idpreview" class="preview" style="margin-top:15px"></div></div>`,
+photo:()=>`<div class="pagehead"><div><h1>Passport Photo Maker</h1><div class="sub">ছবি আপলোড করে একাধিক কপি প্রিন্ট শিটে সাজান</div></div></div><div class="panel"><div class="formgrid"><div class="field"><label>Photo Upload</label><input id="photofile" type="file" accept="image/*"></div><div class="field"><label>Copies</label><input id="copies" type="number" min="1" max="48" value="8"></div></div><div class="actions"><button class="btn" onclick="photoPreview()">Generate Photo Sheet</button><button class="btn secondary" onclick="printArea('photopreview')">Print / Save PDF</button></div><p class="note">ডিফল্টে ৩৫×৪৫ মিমি অনুপাতের কাছাকাছি প্রিভিউ; সরকারি/পরীক্ষার নির্দিষ্ট মাপ আলাদা করে যাচাই করুন।</p><div id="photopreview" class="preview" style="margin-top:15px"></div></div>`,
+cv:()=>`<div class="pagehead"><div><h1>CV Maker</h1><div class="sub">তথ্য লিখে একটি সাধারণ CV তৈরি করুন</div></div></div><div class="panel"><div class="formgrid"><div class="field"><label>Full Name</label><input id="cvname" placeholder="Your name"></div><div class="field"><label>Mobile / Email</label><input id="cvcontact" placeholder="Contact details"></div><div class="field"><label>Address</label><input id="cvaddress"></div><div class="field"><label>Education</label><input id="cvedu" placeholder="Qualification"></div><div class="field full"><label>Skills</label><textarea id="cvskills"></textarea></div><div class="field full"><label>Experience / Objective</label><textarea id="cvexp"></textarea></div></div><div class="actions"><button class="btn" onclick="cvPreview()">Generate CV</button><button class="btn secondary" onclick="printArea('cvpreview')">Print / Save PDF</button></div><div id="cvpreview" class="preview" style="margin-top:15px"></div></div>`,
+handwriting:()=>`<div class="pagehead"><div><h1>Handwriting to Word</h1><div class="sub">হাতে লেখা পেজের ছবি থেকে টেক্সট শনাক্ত করার ওয়ার্কফ্লো</div></div></div><div class="notice">OCR-এর জন্য অনলাইন OCR ইঞ্জিন বা আলাদা ইনস্টলেশন প্রয়োজন। এই ডেমোতে ছবি দেখা ও OCR টেক্সট হাতে সংশোধন/কপি করার জায়গা আছে; স্বয়ংক্রিয় OCR এখনো সংযুক্ত নয়।</div><div class="panel"><div class="field"><label>Upload handwriting image</label><input id="hwfile" type="file" accept="image/*"></div><div id="hwimg"></div><div class="field" style="margin-top:12px"><label>Recognized / corrected text</label><textarea id="hwtext" placeholder="OCR থেকে পাওয়া লেখা এখানে পেস্ট করুন বা টাইপ করুন..."></textarea></div><div class="actions"><button class="btn" onclick="downloadText()">Download .txt</button><button class="btn secondary" onclick="copyText()">Copy Text</button></div></div>`,
+ready:()=>`<div class="pagehead"><div><h1>Ready-made Documents</h1><div class="sub">সাধারণ আবেদনপত্রের খসড়া তৈরি করুন</div></div></div><div class="panel"><div class="field"><label>Template</label><select id="template"><option value="leave">ছুটির আবেদন</option><option value="address">ঠিকানা সংশোধনের আবেদন</option><option value="general">সাধারণ দরখাস্ত</option><option value="income">আয়ের শংসাপত্রের জন্য আবেদন</option></select></div><div class="formgrid" style="margin-top:12px"><div class="field"><label>নাম</label><input id="rname"></div><div class="field"><label>প্রাপক / অফিস</label><input id="rto" placeholder="প্রধান শিক্ষক / BDO ইত্যাদি"></div><div class="field"><label>তারিখ</label><input id="rdate" type="date"></div><div class="field"><label>বিষয় / কারণ</label><input id="rsubject"></div></div><div class="actions"><button class="btn" onclick="readyPreview()">খসড়া তৈরি</button><button class="btn secondary" onclick="printArea('readypreview')">Print / PDF</button></div><div id="readypreview" class="preview" style="margin-top:15px"></div></div>`,
+
+projectstudio:()=>`<div class="pagehead"><div><h1>🎨 School, College & University Project Studio</h1><div class="sub">বাংলা • English • हिन्दी — Project Front Page, Assignment Cover ও Art Design</div></div><span class="pill">A4 Print Ready</span></div>
+<div class="notice">নাম, ক্লাস/সেমিস্টার, রোল, বিষয় ও প্রতিষ্ঠানের তথ্য লিখে ডিজাইন তৈরি করুন। তারপর Print / Save PDF দিয়ে A4 কপি নিন।</div>
+<div class="panel"><div class="formgrid">
+<div class="field"><label>Education Level / শিক্ষার স্তর</label><select id="pslevel"><option>School</option><option>Higher Secondary</option><option>College</option><option>University</option></select></div>
+<div class="field"><label>Class / Semester</label><input id="psclass" placeholder="Class 8 / Semester 2"></div>
+<div class="field"><label>Language / ভাষা</label><select id="pslang"><option value="বাংলা">বাংলা</option><option value="English">English</option><option value="हिन्दी">हिन्दी</option></select></div>
+<div class="field"><label>Design Style</label><select id="psstyle"><option value="floral">Floral Art</option><option value="geometric">Geometric Border</option><option value="science">Science & Academic</option><option value="classic">Classic Premium</option><option value="mandala">Mandala Art</option></select></div>
+<div class="field"><label>Project / Assignment Title</label><input id="pstit" placeholder="Environmental Studies Project"></div>
+<div class="field"><label>Subject / বিষয়</label><input id="pssubject" placeholder="বাংলা / ইতিহাস / Geography"></div>
+<div class="field"><label>Student Name</label><input id="psname" placeholder="শিক্ষার্থীর নাম"></div>
+<div class="field"><label>Roll / Registration No.</label><input id="psroll" placeholder="Roll / Registration"></div>
+<div class="field"><label>School / College / University</label><input id="psschool" placeholder="প্রতিষ্ঠানের নাম"></div>
+<div class="field"><label>Submitted To / শিক্ষকের নাম</label><input id="psteacher" placeholder="শিক্ষক / অধ্যাপকের নাম"></div>
+<div class="field"><label>Academic Year</label><input id="psyear" placeholder="2026–2027"></div>
+<div class="field"><label>Accent Colour</label><select id="pscolor"><option value="#b8862b">Gold</option><option value="#245b9b">Royal Blue</option><option value="#24734e">Emerald Green</option><option value="#8d376f">Purple</option><option value="#a33b32">Maroon</option></select></div>
+</div>
+<div class="actions"><button class="btn" onclick="makeProjectCover()">Create Project Front Page</button><button class="btn secondary" onclick="printArea('pspreview')">Print / Save A4 PDF</button><button class="btn secondary" onclick="clearProjectForm()">Clear Form</button></div>
+<div id="pspreview" class="project-sheet" style="margin-top:18px"><div class="empty">তথ্য পূরণ করে “Create Project Front Page” চাপুন।</div></div></div>
+<div class="grid2" style="margin-top:16px"><div class="panel"><h3>Project Categories</h3><p>📚 School Project · College Assignment · University Dissertation Cover</p><p>🔬 Science · 🌍 Geography · 📖 History · 🎨 Fine Arts · 💼 Commerce</p><p>🌿 Environment · 🧪 Practical File · 📝 Bengali / English Project</p></div><div class="panel"><h3>Print Tips</h3><p>• A4 Portrait কাগজ নির্বাচন করুন</p><p>• Print settings-এ Background Graphics চালু রাখুন</p><p>• PDF হিসেবে Save করে পরে Colour Print করতে পারবেন</p><p class="muted">বিশ্ববিদ্যালয়ের নির্দিষ্ট ফরম্যাট থাকলে সেটি অনুসরণ করুন।</p></div></div>`,
+
+
+ayushman:()=>`<div class="pagehead"><div><h1>🪪 HIMAN Ayushman Card Print PRO</h1><div class="sub">PDF Upload → Front / Back Preview → Adjust → A4 Bulk Print</div></div><span class="pill">Browser-side processing</span></div>
+<div class="notice">PDF বা ছবি আপলোড করুন। একসঙ্গে সর্বোচ্চ ৫টি কার্ড সাজিয়ে A4-তে প্রিন্ট করতে পারবেন। ফাইল এই ব্রাউজারেই প্রসেস হবে; সার্ভারে আপলোড হবে না।</div>
+<div class="panel">
+<div class="formgrid">
+<div class="field full"><label>Ayushman Card PDF / Image Upload (একসঙ্গে একাধিক, সর্বোচ্চ ৫টি)</label><input id="ayfiles" type="file" accept="application/pdf,image/*" multiple></div>
+<div class="field"><label>PDF Layout</label><select id="aylayout"><option value="two">2-page PDF: Page 1 Front, Page 2 Back</option><option value="vertical">1-page PDF: Front উপরে, Back নিচে</option><option value="horizontal">1-page PDF: Front বামে, Back ডানে</option><option value="same">একই ছবি Front ও Back হিসেবে</option></select></div>
+<div class="field"><label>Card Size</label><select id="aysize"><option value="pvc">PVC / Smart Card — 8.56 × 5.4 cm</option><option value="custom">A4 Fit Preview (নিজে মাপ ঠিক করুন)</option></select></div>
+</div>
+<div class="actions"><button class="btn" onclick="ayLoadFiles()">Upload & Create Preview</button><button class="btn secondary" onclick="ayClear()">Clear All</button></div>
+<div id="aystatus" class="muted" style="margin-top:10px">এখনও কোনো ফাইল যোগ করা হয়নি।</div>
+</div>
+<div class="panel" style="margin-top:15px">
+<h3>Card Adjust Settings</h3>
+<div class="formgrid">
+<div class="field"><label>Top (Y) <span id="aytopv">0%</span></label><input id="aytop" type="range" min="0" max="35" value="0" oninput="aySetLabel('aytop')"></div>
+<div class="field"><label>Height <span id="ayheightv">100%</span></label><input id="ayheight" type="range" min="40" max="100" value="100" oninput="aySetLabel('ayheight')"></div>
+<div class="field"><label>Width <span id="aywidthv">100%</span></label><input id="aywidth" type="range" min="40" max="100" value="100" oninput="aySetLabel('aywidth')"></div>
+<div class="field"><label>Front Left <span id="ayfrontv">0%</span></label><input id="ayfront" type="range" min="0" max="50" value="0" oninput="aySetLabel('ayfront')"></div>
+<div class="field"><label>Back Left <span id="aybackv">0%</span></label><input id="ayback" type="range" min="0" max="50" value="0" oninput="aySetLabel('ayback')"></div>
+</div>
+<p class="muted">এগুলো crop preview-এর প্রাথমিক manual adjustment। PDF-র বিন্যাস আলাদা হলে layout ও slider ঠিক করে নিন।</p>
+<div class="actions"><button class="btn secondary" onclick="ayRebuild()">Apply Adjustments</button><button class="btn" onclick="ayAddAll()">Confirm & Add to Print List</button></div>
+<div id="aynewpreview" class="ay-preview-grid" style="margin-top:14px"></div>
+</div>
+<div class="panel" style="margin-top:15px">
+<div class="pagehead"><div><h3>Print List <span id="aycount" class="pill">0 / 5</span></h3><div class="sub">প্রতিটি কার্ডের Front ও Back পাশাপাশি PVC সাইজে সাজানো হবে</div></div><button class="btn" onclick="ayPrint()">PRINT A4</button></div>
+<div id="aylist" class="ay-list"><div class="empty">কোনো কার্ড যোগ করা হয়নি।</div></div>
+</div>`,
+
+
+imagestudio:()=>`<div class="pagehead"><div><h1>🖼️ Image & Signature Studio</h1><div class="sub">ছবি Resize, Compress, Background, Signature ও Print প্রস্তুতি</div></div><span class="pill">Browser Processing</span></div>
+<div class="notice">আপনার ছবি এই ব্রাউজারেই প্রসেস হবে। সরকারি পরিচয়পত্রের ছবি কেবল গ্রাহকের অনুমতি নিয়ে ব্যবহার করুন।</div>
+<div class="panel"><div class="formgrid">
+<div class="field full"><label>ছবি আপলোড করুন</label><input id="imfile" type="file" accept="image/*" onchange="imLoad(this)"></div>
+<div class="field"><label>Width (px)</label><input id="imwidth" type="number" value="413" min="1"></div>
+<div class="field"><label>Height (px)</label><input id="imheight" type="number" value="531" min="1"></div>
+<div class="field"><label>Output Format</label><select id="imformat"><option value="image/jpeg">JPG</option><option value="image/png">PNG</option><option value="image/webp">WEBP</option></select></div>
+<div class="field"><label>Quality / Compress</label><input id="imquality" type="range" min="10" max="100" value="85" oninput="document.getElementById('imqv').textContent=this.value+'%'"><span id="imqv" class="muted">85%</span></div>
+<div class="field"><label>Background Colour (for transparent image)</label><select id="imbg"><option value="none">Keep Original</option><option value="#ffffff">White</option><option value="#dceeff">Light Blue</option><option value="#e53935">Red</option></select></div>
+<div class="field"><label>Print DPI</label><select id="imdpi"><option>200</option><option selected>300</option><option>600</option></select></div>
+</div><div class="actions"><button class="btn" onclick="imProcess()">Resize / Compress</button><button class="btn secondary" onclick="imDownload()">Download Image</button><button class="btn secondary" onclick="imPrint()">Print Photo</button></div>
+<div class="im-preview"><canvas id="imcanvas" width="413" height="531"></canvas><div id="iminfo" class="muted">কোনো ছবি আপলোড করা হয়নি।</div></div></div>
+<div class="panel" style="margin-top:15px"><h3>Passport Photo Quick Sizes</h3><div class="actions"><button class="btn secondary" onclick="imPreset(413,531)">35 × 45 mm (300 DPI approx.)</button><button class="btn secondary" onclick="imPreset(600,600)">2 × 2 inch</button><button class="btn secondary" onclick="imPreset(354,472)">3 × 4 cm approx.</button></div><p class="muted">Background remover-এর জন্য আলাদা AI/model integration প্রয়োজন; এখানে solid background fill কেবল transparent অংশে প্রয়োগ হয়।</p></div>`,
+
+customers:()=>`<div class="pagehead"><div><h1>Customer Management</h1><div class="sub">গ্রাহকের নাম ও যোগাযোগের তথ্য</div></div></div><div class="panel"><div class="formgrid"><div class="field"><label>Customer Name</label><input id="cname"></div><div class="field"><label>Mobile Number</label><input id="cmobile" inputmode="numeric"></div><div class="field full"><label>Notes (সাধারণ নোট; সংবেদনশীল তথ্য নয়)</label><input id="cnote"></div></div><div class="actions"><button class="btn" onclick="addCustomer()">Save Customer</button></div></div><div class="panel" style="margin-top:15px"><h3>Customer List</h3><div class="tablewrap"><table><thead><tr><th>Name</th><th>Mobile</th><th>Notes</th><th>Action</th></tr></thead><tbody>${db.customers.map((c,i)=>`<tr><td>${esc(c.name)}</td><td>${esc(c.mobile)}</td><td>${esc(c.note)}</td><td><button class="btn danger" onclick="del('customers',${i})">Delete</button></td></tr>`).join('')||'<tr><td colspan="4" class="empty">No customers yet</td></tr>'}</tbody></table></div></div>`,
+jobs:()=>`<div class="pagehead"><div><h1>Job History & Search</h1><div class="sub">নতুন কাজ যোগ করুন এবং আগের কাজ খুঁজুন</div></div></div><div class="panel"><div class="formgrid"><div class="field"><label>Customer Name</label><input id="jcustomer"></div><div class="field"><label>Mobile</label><input id="jmobile"></div><div class="field"><label>Job / Service</label><input id="jtitle" placeholder="যেমন PAN form / Photo print"></div><div class="field"><label>Status</label><select id="jstatus"><option>Pending</option><option>In Progress</option><option>Completed</option><option>Delivered</option></select></div></div><div class="actions"><button class="btn" onclick="addJob()">Add Job</button></div></div><div class="panel" style="margin-top:15px"><div class="field"><label>Search jobs</label><input id="jobsearch" oninput="filterJobs()" placeholder="নাম, মোবাইল বা কাজের নাম লিখুন"></div><div class="tablewrap"><table><thead><tr><th>Date</th><th>Customer</th><th>Mobile</th><th>Job</th><th>Status</th></tr></thead><tbody id="jobrows">${jobRows()}</tbody></table></div></div>`,
+print:()=>`<div class="pagehead"><div><h1>Print Management</h1><div class="sub">প্রিন্ট কাজের হিসাব রাখুন</div></div></div><div class="panel"><div class="formgrid"><div class="field"><label>Customer</label><input id="pcustomer"></div><div class="field"><label>Print Type</label><select id="ptype"><option>A4 B/W</option><option>A4 Colour</option><option>Photo</option><option>ID Card</option><option>Scan</option></select></div><div class="field"><label>Copies / Pages</label><input id="pqty" type="number" min="1" value="1"></div><div class="field"><label>Amount (₹)</label><input id="pamount" type="number" min="0" value="0"></div></div><div class="actions"><button class="btn" onclick="addPrint()">Add Print Job</button></div></div><div class="panel" style="margin-top:15px"><h3>Print Queue / Log</h3><div class="tablewrap"><table><thead><tr><th>Customer</th><th>Type</th><th>Qty</th><th>Amount</th><th>Date</th></tr></thead><tbody>${db.prints.map(p=>`<tr><td>${esc(p.customer)}</td><td>${esc(p.type)}</td><td>${p.qty}</td><td>₹${p.amount}</td><td>${p.date}</td></tr>`).join('')||'<tr><td colspan="5" class="empty">No print jobs</td></tr>'}</tbody></table></div></div>`,
+online:()=>`<div class="pagehead"><div><h1>Online Services & Government Schemes</h1><div class="sub">পরিষেবার তালিকা ও গ্রাহককে প্রয়োজনীয় তথ্য দিন</div></div></div><div class="notice">সরকারি প্রকল্পের যোগ্যতা, নথি ও আবেদনের নিয়ম পরিবর্তিত হতে পারে। আবেদন করার আগে সংশ্লিষ্ট সরকারি পোর্টালে যাচাই করুন।</div><div class="cards">${[['🪪','PAN / Voter','Application, correction & status guidance'],['🛂','Passport','Application & appointment support'],['🏛️','Government Schemes','Scheme information & form assistance'],['📜','Certificates','Income, caste, residence etc.'],['🧾','GST / FSSAI / Trade','Business registration guidance'],['🎫','Ticket Booking','Travel booking assistance'],['💻','Other Online Forms','Registration and application help'],['🖨️','Print / Scan','Document services']].map(x=>`<div class="card"><div style="font-size:25px">${x[0]}</div><h3 style="color:var(--gold2)">${x[1]}</h3><div class="muted">${x[2]}</div></div>`).join('')}</div>`,
+loans:()=>`<div class="pagehead"><div><h1>Loan Application Management</h1><div class="sub">গ্রাহকের প্রাথমিক loan enquiry নথিভুক্ত করুন</div></div></div><div class="notice">এটি কেবল enquiry tracker, loan approval বা lender-এর প্রতিনিধিত্ব নয়। গ্রাহকের PAN/Aadhaar নম্বর, ব্যাংক তথ্য, OTP বা নথি এখানে রাখবেন না।</div><div class="panel"><div class="formgrid"><div class="field"><label>Customer Name</label><input id="lname"></div><div class="field"><label>Mobile</label><input id="lmobile"></div><div class="field"><label>Loan Type</label><select id="ltype"><option>Personal Loan</option><option>Business Loan</option><option>Home Loan</option><option>Other</option></select></div><div class="field"><label>Enquiry Amount (₹)</label><input id="lamount" type="number"></div><div class="field"><label>Status</label><select id="lstatus"><option>New Enquiry</option><option>Documents Pending</option><option>Under Review</option><option>Referred to Lender</option><option>Closed</option></select></div></div><div class="actions"><button class="btn" onclick="addLoan()">Save Enquiry</button></div></div><div class="panel" style="margin-top:15px"><h3>Loan Enquiries</h3><div class="tablewrap"><table><thead><tr><th>Name</th><th>Mobile</th><th>Type</th><th>Amount</th><th>Status</th></tr></thead><tbody>${db.loans.map(l=>`<tr><td>${esc(l.name)}</td><td>${esc(l.mobile)}</td><td>${esc(l.type)}</td><td>₹${l.amount}</td><td><span class="pill">${esc(l.status)}</span></td></tr>`).join('')||'<tr><td colspan="5" class="empty">No enquiries</td></tr>'}</tbody></table></div></div>`,
+backup:()=>`<div class="pagehead"><div><h1>Admin Panel & Backup</h1><div class="sub">ডেমো ডেটা export / import করুন</div></div></div><div class="notice">এই ডেমোতে আলাদা login/authentication বা cloud backup নেই। এটি production admin panel নয়। একাধিক কম্পিউটারে sync করতে secure backend, user login ও database প্রয়োজন।</div><div class="grid2"><div class="panel"><h3>Backup</h3><p class="muted">এই ব্রাউজারে থাকা গ্রাহক, কাজ, প্রিন্ট ও enquiry ডেটার JSON কপি নিন।</p><div class="actions"><button class="btn" onclick="backup()">Download Backup</button><label class="btn secondary">Restore Backup<input type="file" id="restore" accept="application/json" hidden onchange="restore(this)"></label></div></div><div class="panel"><h3>Workspace Info</h3><p>Customers: <b>${db.customers.length}</b></p><p>Jobs: <b>${db.jobs.length}</b></p><p>Print records: <b>${db.prints.length}</b></p><p>Loan enquiries: <b>${db.loans.length}</b></p><button class="btn danger" onclick="if(confirm('সব লোকাল ডেটা মুছে ফেলবেন?')){db={customers:[],jobs:[],loans:[],prints:[]};save()}">Clear All Demo Data</button></div></div>`
+};
+
+function makeProjectCover(){
+ const val=id=>document.getElementById(id)?.value?.trim()||'';
+ const lang=val('pslang'), level=val('pslevel'), style=val('psstyle'), color=val('pscolor');
+ const labels=lang==='বাংলা'?{project:'প্রজেক্ট / অ্যাসাইনমেন্ট',subject:'বিষয়',name:'শিক্ষার্থীর নাম',roll:'রোল / রেজিস্ট্রেশন',teacher:'জমা দেওয়া হলো',year:'শিক্ষাবর্ষ'}:lang==='हिन्दी'?{project:'प्रोजेक्ट / असाइनमेंट',subject:'विषय',name:'विद्यार्थी का नाम',roll:'रोल / पंजीकरण',teacher:'प्रस्तुत किया गया',year:'शैक्षणिक वर्ष'}:{project:'PROJECT / ASSIGNMENT',subject:'SUBJECT',name:'STUDENT NAME',roll:'ROLL / REGISTRATION',teacher:'SUBMITTED TO',year:'ACADEMIC YEAR'};
+ const icons={floral:'❀  ✿  ❀',geometric:'◇  ◆  ◇',science:'⚛  ⚗  ⚛',classic:'✦  ❖  ✦',mandala:'☸  ❁  ☸'};
+ const title=val('pstit')||'Project Work';
+ const details=[[labels.name,val('psname')],[labels.roll,val('psroll')],[labels.teacher,val('psteacher')],[labels.year,val('psyear')]];
+ document.getElementById('pspreview').innerHTML=`<div class="project-frame" style="--pc:${color};border-style:${style==='geometric'?'solid':'double'}"><div class="project-kicker">${esc(level)} • ${esc(val('psclass'))}</div><div class="project-art">${icons[style]}</div><div class="project-school">${esc(val('psschool')||'School / College / University Name')}</div><div class="project-kicker">${labels.project}</div><h1 class="project-title">${esc(title)}</h1><div class="project-subject">${labels.subject}: ${esc(val('pssubject')||'________________')}</div><div class="project-art">${style==='science'?'⚛':style==='mandala'?'✺':'❦'}</div><div class="project-meta">${details.map(d=>`<div><b>${d[0]}:</b><br>${esc(d[1]||'________________')}</div>`).join('')}</div><div style="margin-top:36px;color:${color};font-weight:bold">${esc(level)} · ${esc(val('psclass'))}</div></div>`;
+}
+function clearProjectForm(){['psclass','pstit','pssubject','psname','psroll','psschool','psteacher','psyear'].forEach(id=>{let e=document.getElementById(id);if(e)e.value=''});document.getElementById('pspreview').innerHTML='<div class="empty">ফর্ম পরিষ্কার করা হয়েছে।</div>'}
+
+
+let ayPending=[], ayCards=[];
+function aySetLabel(id){const e=document.getElementById(id);if(e)document.getElementById(id+'v').textContent=e.value+'%'}
+function ayDataUrl(canvas){return canvas.toDataURL('image/jpeg',0.96)}
+async function ayRenderPdf(file){
+ if(!window.pdfjsLib)throw new Error('PDF reader লোড হয়নি। ইন্টারনেট সংযোগ দিয়ে আবার চেষ্টা করুন।');
+ pdfjsLib.GlobalWorkerOptions.workerSrc='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+ const bytes=await file.arrayBuffer(), pdf=await pdfjsLib.getDocument({data:bytes}).promise, out=[];
+ for(let p=1;p<=Math.min(pdf.numPages,2);p++){const page=await pdf.getPage(p),vp=page.getViewport({scale:2});const c=document.createElement('canvas');c.width=vp.width;c.height=vp.height;await page.render({canvasContext:c.getContext('2d'),viewport:vp}).promise;out.push(c)}
+ return {pages:out};
+}
+function ayCropCanvas(canvas,side,layout){
+ const c=document.createElement('canvas'),ctx=c.getContext('2d'),w=canvas.width,h=canvas.height;
+ let sx=0,sy=0,sw=w,sh=h;
+ if(layout==='vertical'){sh=Math.floor(h/2);sy=side==='back'?sh:0}
+ else if(layout==='horizontal'){sw=Math.floor(w/2);sx=side==='back'?sw:0}
+ const top=+(document.getElementById('aytop')?.value||0)/100;
+ const height=+(document.getElementById('ayheight')?.value||100)/100;
+ const width=+(document.getElementById('aywidth')?.value||100)/100;
+ const left=+(document.getElementById(side==='front'?'ayfront':'ayback')?.value||0)/100;
+ sx+=Math.floor(sw*left); sy+=Math.floor(sh*top); sw=Math.max(1,Math.floor(sw*width)); sh=Math.max(1,Math.floor(sh*height));
+ sx=Math.min(sx,w-1);sy=Math.min(sy,h-1);sw=Math.min(sw,w-sx);sh=Math.min(sh,h-sy);
+ c.width=sw;c.height=sh;ctx.drawImage(canvas,sx,sy,sw,sh,0,0,sw,sh);return c;
+}
+async function ayLoadFiles(){
+ const files=[...document.getElementById('ayfiles').files];if(!files.length)return alert('PDF বা ছবি নির্বাচন করুন।');
+ if(files.length>5)return alert('একসঙ্গে সর্বোচ্চ ৫টি ফাইল দিন।');
+ ayPending=[];document.getElementById('aystatus').textContent='ফাইল প্রসেস হচ্ছে...';
+ try{
+  for(const f of files){
+   let pages=[];
+   if(f.type==='application/pdf'){const r=await ayRenderPdf(f);pages=r.pages}
+   else {const im=new Image(),url=URL.createObjectURL(f);await new Promise((res,rej)=>{im.onload=res;im.onerror=rej;im.src=url});const c=document.createElement('canvas');c.width=im.naturalWidth;c.height=im.naturalHeight;c.getContext('2d').drawImage(im,0,0);pages=[c];URL.revokeObjectURL(url)}
+   ayPending.push({name:f.name,pages});
+  }
+  ayRebuild();document.getElementById('aystatus').textContent=ayPending.length+'টি ফাইল Preview-এর জন্য প্রস্তুত। Front/Back দেখে নিন।';
+ }catch(e){document.getElementById('aystatus').textContent='সমস্যা: '+e.message;alert(e.message)}
+}
+function ayRebuild(){
+ const layout=document.getElementById('aylayout').value,box=document.getElementById('aynewpreview');let html='';
+ ayPending.forEach((item,i)=>{
+  let front,back;
+  if(item.pages.length>1&&layout==='two'){front=item.pages[0];back=item.pages[1]}
+  else {front=item.pages[0];back=item.pages[0]}
+  const fc=ayCropCanvas(front,'front',item.pages.length>1&&layout==='two'?'same':layout);
+  const bc=ayCropCanvas(back,'back',item.pages.length>1&&layout==='two'?'same':layout);
+  item.front=ayDataUrl(fc);item.back=ayDataUrl(bc);
+  html+=`<div class="ay-side"><b>${esc(item.name)} — FRONT</b><img src="${item.front}"><small>Front Preview</small></div><div class="ay-side"><b>${esc(item.name)} — BACK</b><img src="${item.back}"><small>Back Preview</small></div>`;
+ });
+ box.innerHTML=html||'<div class="empty">আগে PDF / Image আপলোড করুন।</div>';
+}
+function ayAddAll(){
+ if(!ayPending.length)return alert('আগে ফাইল আপলোড করুন।');
+ for(const item of ayPending){if(ayCards.length>=5)break;ayCards.push({name:item.name,front:item.front,back:item.back})}
+ ayPending=[];document.getElementById('aynewpreview').innerHTML='';document.getElementById('aystatus').textContent='কার্ড Print List-এ যোগ হয়েছে।';
+ document.getElementById('ayfiles').value='';ayRenderList();
+}
+function ayRenderList(){
+ document.getElementById('aycount').textContent=ayCards.length+' / 5';
+ document.getElementById('aylist').innerHTML=ayCards.map((c,i)=>`<div class="ay-card-pair"><div><b>Front</b><img src="${c.front}"></div><div><b>Back</b><img src="${c.back}"></div><div style="grid-column:1/-1;font-size:12px">${esc(c.name)}</div><button class="btn danger" onclick="ayDelete(${i})">Delete Card</button></div>`).join('')||'<div class="empty">কোনো কার্ড যোগ করা হয়নি।</div>';
+}
+function ayDelete(i){ayCards.splice(i,1);ayRenderList()}
+function ayClear(){ayPending=[];ayCards=[];document.getElementById('ayfiles').value='';document.getElementById('aynewpreview').innerHTML='';document.getElementById('aystatus').textContent='সব ফাইল পরিষ্কার করা হয়েছে।';ayRenderList()}
+function ayPrint(){
+ if(!ayCards.length)return alert('Print List-এ কার্ড যোগ করুন।');
+ const root=document.createElement('div');root.id='ayprintroot';
+ const sheet=document.createElement('div');sheet.className='ay-print-sheet';
+ ayCards.forEach(c=>{for(const src of [c.front,c.back]){const d=document.createElement('div');d.className='ay-print-item';const im=document.createElement('img');im.src=src;d.appendChild(im);sheet.appendChild(d)}});
+ root.appendChild(sheet);document.body.appendChild(root);document.body.classList.add('ay-printing');
+ const cleanup=()=>{document.body.classList.remove('ay-printing');root.remove();window.removeEventListener('afterprint',cleanup)};
+ window.addEventListener('afterprint',cleanup);setTimeout(()=>window.print(),250);
+}
+
+
+let imImage=null, imOutput=null;
+function imLoad(input){
+ const f=input.files?.[0];if(!f)return;const u=URL.createObjectURL(f),img=new Image();
+ img.onload=()=>{imImage=img;document.getElementById('imwidth').value=img.naturalWidth;document.getElementById('imheight').value=img.naturalHeight;imProcess();URL.revokeObjectURL(u)};
+ img.onerror=()=>alert('ছবিটি খোলা যায়নি।');img.src=u;
+}
+function imPreset(w,h){document.getElementById('imwidth').value=w;document.getElementById('imheight').value=h;imProcess()}
+function imProcess(){
+ if(!imImage)return alert('আগে ছবি আপলোড করুন।');
+ const w=Math.max(1,Math.min(6000,+document.getElementById('imwidth').value||413)),h=Math.max(1,Math.min(6000,+document.getElementById('imheight').value||531));
+ const c=document.getElementById('imcanvas');c.width=w;c.height=h;const ctx=c.getContext('2d');
+ const bg=document.getElementById('imbg').value;if(bg!=='none'){ctx.fillStyle=bg;ctx.fillRect(0,0,w,h)}
+ const scale=Math.max(w/imImage.naturalWidth,h/imImage.naturalHeight),sw=imImage.naturalWidth*scale,sh=imImage.naturalHeight*scale;
+ ctx.drawImage(imImage,(w-sw)/2,(h-sh)/2,sw,sh);
+ const fmt=document.getElementById('imformat').value,q=(+document.getElementById('imquality').value)/100;
+ imOutput=c.toDataURL(fmt,q);document.getElementById('iminfo').textContent=`${w} × ${h} px · ${document.getElementById('imdpi').value} DPI (print metadata নয়) · আনুমানিক ${Math.round(imOutput.length*.75/1024)} KB`;
+}
+function imDownload(){if(!imOutput)return alert('আগে ছবি প্রসেস করুন।');const a=document.createElement('a');a.href=imOutput;a.download='himan-edited-photo.'+(document.getElementById('imformat').value==='image/png'?'png':document.getElementById('imformat').value==='image/webp'?'webp':'jpg');a.click()}
+function imPrint(){if(!imOutput)return alert('আগে ছবি প্রসেস করুন।');const w=window.open('','_blank');w.document.write(`<html><head><title>HIMAN Photo Print</title><style>@page{size:A4;margin:12mm}body{font-family:Arial}img{max-width:100%;max-height:100mm;object-fit:contain}</style></head><body><img src="${imOutput}"><script>window.onload=()=>window.print()<\/script></body></html>`);w.document.close()}
+
+function maker(title,desc,kind){return `<div class="pagehead"><div><h1>${title}</h1><div class="sub">${desc}</div></div></div><div class="panel"><div class="field"><label>Document Title</label><input id="doctitle" placeholder="Document title"></div><div class="field" style="margin-top:12px"><label>Document Text</label><textarea id="doctext" style="min-height:260px" placeholder="এখানে ডকুমেন্টের লেখা লিখুন বা পেস্ট করুন..."></textarea></div><div class="actions"><button class="btn" onclick="docPreview()">Preview A4</button><button class="btn secondary" onclick="printArea('docpreview')">Print / Save PDF</button><button class="btn secondary" onclick="downloadDoc()">Download .txt</button></div><div id="docpreview" class="preview" style="margin-top:15px"></div></div>`}
+function render(){let p=location.hash.slice(1)||'dashboard';if(!pages[p])p='dashboard';$('#page').innerHTML=pages[p]();$$('.nav button').forEach(b=>b.classList.toggle('active',b.dataset.page===p));$('#today').textContent=new Date().toLocaleDateString('en-IN',{day:'2-digit',month:'short',year:'numeric'});$('#year').textContent=new Date().getFullYear();if(p==='handwriting')$('#hwfile')?.addEventListener('change',e=>showFile(e.target.files[0],'hwimg'))}
+function go(p){location.hash=p;$('#sidebar').classList.remove('open')}window.addEventListener('hashchange',render);$('#menu').onclick=()=>$('#sidebar').classList.toggle('open');$$('.nav button').forEach(b=>b.onclick=()=>go(b.dataset.page));
+function printArea(id){let el=document.getElementById(id);if(!el||!el.innerHTML.trim()){alert('আগে Preview তৈরি করুন');return}let w=window.open('','_blank');w.document.write(`<html><head><title>Print</title><style>body{font-family:Arial;padding:20mm;color:#111;white-space:normal}img{max-width:100%}</style></head><body>${el.innerHTML}
+<div id="himanWelcome" class="himan-welcome">
+  <div class="welcome-logo">HIMAN <span>CAPITAL FINANCE</span></div>
+  <div class="welcome-person" aria-hidden="true"><svg class="welcome-human-svg" viewBox="0 0 240 250" role="img" aria-label="3D style person greeting with folded hands">
+<defs>
+ <linearGradient id="skin" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffe0b7"/><stop offset=".55" stop-color="#d99a69"/><stop offset="1" stop-color="#9e5b3c"/></linearGradient>
+ <linearGradient id="suit" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#273f67"/><stop offset=".5" stop-color="#101b31"/><stop offset="1" stop-color="#050b18"/></linearGradient>
+ <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff0a9"/><stop offset=".5" stop-color="#d6a33c"/><stop offset="1" stop-color="#805316"/></linearGradient>
+ <radialGradient id="face" cx=".35" cy=".25"><stop stop-color="#ffe9cb"/><stop offset=".7" stop-color="#e6ad7d"/><stop offset="1" stop-color="#a96546"/></radialGradient>
+ <filter id="shadow" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="5"/></filter>
+</defs>
+<ellipse cx="120" cy="235" rx="72" ry="10" fill="#000" opacity=".48" filter="url(#shadow)"/>
+<circle cx="120" cy="118" r="105" fill="none" stroke="url(#gold)" stroke-width="2" opacity=".65"/>
+<!-- body -->
+<path d="M52 225 Q54 164 82 145 L105 137 L135 137 L158 145 Q186 164 188 225Z" fill="url(#suit)" stroke="#b88b43" stroke-width="2"/>
+<path d="M103 139 L120 166 L137 139 L129 225 L111 225Z" fill="#f1e8d6"/>
+<path d="M111 162 L120 174 L129 162 L124 225 L116 225Z" fill="#b78a3e"/>
+<!-- neck -->
+<path d="M104 116 L104 145 Q120 160 136 145 L136 116Z" fill="url(#skin)"/>
+<!-- ears and face -->
+<ellipse cx="82" cy="82" rx="10" ry="17" fill="#c9825e"/><ellipse cx="158" cy="82" rx="10" ry="17" fill="#c9825e"/>
+<path d="M85 54 Q88 25 120 25 Q152 25 155 55 L151 104 Q145 130 120 137 Q95 130 89 104Z" fill="url(#face)" stroke="#a86748" stroke-width="1.5"/>
+<!-- hair -->
+<path d="M83 75 Q74 38 100 24 Q129 8 153 29 Q171 43 158 77 L151 58 Q135 66 119 54 Q103 70 88 64Z" fill="#17131a"/>
+<path d="M90 47 Q104 19 130 25 Q143 26 152 41 Q130 37 117 47 Q103 54 90 47Z" fill="#34212a"/>
+<!-- face details -->
+<path d="M101 83 Q108 78 115 83" fill="none" stroke="#53352d" stroke-width="2.4" stroke-linecap="round"/>
+<path d="M125 83 Q132 78 139 83" fill="none" stroke="#53352d" stroke-width="2.4" stroke-linecap="round"/>
+<ellipse cx="109" cy="88" rx="2.7" ry="3.5" fill="#241c1b"/><ellipse cx="131" cy="88" rx="2.7" ry="3.5" fill="#241c1b"/>
+<path d="M119 88 L116 103 Q120 107 124 103" fill="none" stroke="#b66e55" stroke-width="2" stroke-linecap="round"/>
+<path d="M108 115 Q120 123 132 115" fill="none" stroke="#8f3f3b" stroke-width="2.5" stroke-linecap="round"/>
+<!-- arms bent inward -->
+<path d="M68 165 Q49 174 63 194 L94 211 L108 190 L87 173Z" fill="url(#suit)" stroke="#b88b43" stroke-width="2"/>
+<path d="M172 165 Q191 174 177 194 L146 211 L132 190 L153 173Z" fill="url(#suit)" stroke="#b88b43" stroke-width="2"/>
+<!-- forearms -->
+<path d="M76 185 Q93 188 111 165 L124 180 Q109 207 89 211Z" fill="url(#skin)" stroke="#b47755" stroke-width="1.5"/>
+<path d="M164 185 Q147 188 129 165 L116 180 Q131 207 151 211Z" fill="url(#skin)" stroke="#b47755" stroke-width="1.5"/>
+<!-- folded palms and fingers -->
+<path d="M111 85 Q104 91 105 110 L110 143 Q113 151 120 151 Q127 151 130 143 L135 110 Q136 91 129 85 Q125 82 122 91 L120 119 L118 91 Q115 82 111 85Z" fill="url(#skin)" stroke="#9f634a" stroke-width="1.5"/>
+<path d="M108 96 Q111 89 114 96 L116 125 M116 91 Q120 84 123 93 L123 126 M124 93 Q129 88 131 97 L128 125" fill="none" stroke="#ffe7c8" stroke-width="2" stroke-linecap="round"/>
+<path d="M109 141 Q120 148 131 141" fill="none" stroke="#a86448" stroke-width="1.4"/>
+<!-- gold cuffs -->
+<path d="M82 199 L96 207 L91 216 L77 207Z M144 207 L158 199 L163 207 L149 216Z" fill="url(#gold)"/>
+</svg></div>
+  <div class="welcome-greeting">🙏 নমস্কার! স্বাগতম</div>
+  <div class="welcome-sub">আপনার ডিজিটাল পরিষেবা কেন্দ্রে আপনাকে স্বাগত</div>
+  <div class="welcome-loader"><i></i></div>
+  <button class="btn" onclick="closeHimanWelcome()">Enter Dashboard</button>
+</div>
+<button id="himanBotToggle" class="himan-bot-toggle" onclick="toggleHimanBot()">🤖 HIMAN AI</button>
+<div id="himanBot" class="himan-bot">
+  <div class="bot-head">🤖 HIMAN Smart Assistant <button onclick="toggleHimanBot()">×</button></div>
+  <div id="himanBotMsgs" class="bot-msgs"><div class="bot-msg">নমস্কার! আমি HIMAN Assistant-এর প্রাথমিক ডেমো। কোন পরিষেবাটি খুঁজছেন?</div></div>
+  <div class="bot-input"><input id="himanBotText" placeholder="আপনার প্রশ্ন লিখুন..." onkeydown="if(event.key==='Enter')sendHimanBot()"><button class="btn" onclick="sendHimanBot()">Send</button></div>
+  <small>ডেমো মোড: প্রকৃত AI উত্তর পেতে নিরাপদ AI API Backend সংযোগ প্রয়োজন।</small>
+</div>
+<style>
+.himan-welcome{position:fixed;inset:0;z-index:99999;background:radial-gradient(circle at 50% 30%,#443116,#090909 65%);display:flex;flex-direction:column;align-items:center;justify-content:center;color:#f6dfaa;text-align:center;transition:opacity .6s}
+.himan-welcome.hide{opacity:0;pointer-events:none}
+.welcome-logo{font-size:clamp(26px,6vw,48px);font-weight:950;letter-spacing:4px;text-shadow:0 4px 18px #d9a44188}
+.welcome-logo span{display:block;font-size:13px;letter-spacing:6px}
+.welcome-person{width:min(230px,52vw);height:220px;margin:10px 0 2px;filter:drop-shadow(0 16px 20px #0009);display:flex;align-items:center;justify-content:center}.welcome-human-svg{width:100%;height:100%;overflow:visible;animation:humanFloat 3.2s ease-in-out infinite}@keyframes humanFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+.welcome-greeting{font-size:30px;font-weight:800}.welcome-sub{margin:8px 0 22px;color:#e2d0a8}
+.welcome-loader{width:180px;height:4px;background:#54452b;border-radius:8px;margin:0 0 24px;overflow:hidden}
+.welcome-loader i{display:block;height:100%;width:40%;background:#e7bd66;animation:welcomeLoad 2s ease-in-out infinite}
+@keyframes welcomeLoad{from{transform:translateX(-110%)}to{transform:translateX(360%)}}
+.himan-bot-toggle{position:fixed;right:18px;bottom:18px;z-index:9990;border:1px solid #d5a84d;background:linear-gradient(135deg,#f3d28a,#a97922);color:#17120a;padding:13px 17px;border-radius:30px;font-weight:900;box-shadow:0 8px 30px #0008}
+.himan-bot{display:none;position:fixed;right:18px;bottom:78px;width:min(360px,calc(100vw - 36px));height:440px;z-index:9991;background:#14120e;border:1px solid #b58a3c;border-radius:16px;box-shadow:0 15px 50px #000b;overflow:hidden;color:#f8e8c5}
+.himan-bot.open{display:flex;flex-direction:column}.bot-head{padding:14px;background:#2a2113;font-weight:800}.bot-head button{float:right;background:none;color:white;border:0;font-size:22px}
+.bot-msgs{padding:12px;overflow:auto;flex:1}.bot-msg{background:#292317;border:1px solid #514126;border-radius:12px;padding:10px;margin:8px 0;max-width:90%}.bot-msg.user{margin-left:auto;background:#44331a}
+.bot-input{display:flex;gap:6px;padding:10px}.bot-input input{min-width:0}.himan-bot small{padding:0 10px 10px;color:#b8a783}
+@media print{.himan-welcome,.himan-bot,.himan-bot-toggle{display:none!important}}
+</style>
+<script>
+function closeHimanWelcome(){const w=document.getElementById('himanWelcome');w.classList.add('hide');setTimeout(()=>w.remove(),650)}
+setTimeout(()=>{if(document.getElementById('himanWelcome'))closeHimanWelcome()},4200);
+function toggleHimanBot(){document.getElementById('himanBot').classList.toggle('open')}
+function sendHimanBot(){
+ const input=document.getElementById('himanBotText'),txt=input.value.trim();if(!txt)return;
+ const box=document.getElementById('himanBotMsgs');box.insertAdjacentHTML('beforeend','<div class="bot-msg user">'+himanEscape(txt)+'</div>');input.value='';
+ let reply='আমি এই ডেমোতে সাধারণ নির্দেশনা দিতে পারি। নির্দিষ্ট টুল খুলতে বামদিকের মেনু ব্যবহার করুন।';
+ if(/passport|পাসপোর্ট|ছবি/.test(txt.toLowerCase()))reply='Passport Photo Maker খুলতে বামদিকের Document Studio থেকে Passport Photo Maker নির্বাচন করুন।';
+ else if(/ayushman|আয়ুষ্মান|আয়ুষ্মান/.test(txt.toLowerCase()))reply='Ayushman Card Print PRO খুলে PDF বা ছবি আপলোড করুন, Front/Back Preview দেখে Crop Adjust করুন।';
+ else if(/project|প্রজেক্ট|প্রজেক্ট/.test(txt.toLowerCase()))reply='Project Studio থেকে School, College বা University নির্বাচন করে কভার পেজ তৈরি করুন।';
+ else if(/pdf/.test(txt.toLowerCase()))reply='PDF Studio-এর কাজগুলো এই সংস্করণে সম্পূর্ণ যুক্ত হয়নি।';
+ box.insertAdjacentHTML('beforeend','<div class="bot-msg">'+himanEscape(reply)+'</div>');box.scrollTop=box.scrollHeight;
+}
+function himanEscape(s){return s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+<\/script>
+</body></html>`);w.document.close();w.focus();w.print()}
+function docPreview(){let t=esc($('#doctitle').value||'Document'),v=esc($('#doctext').value).replace(/\n/g,'<br>');$('#docpreview').innerHTML=`<h2 style="text-align:center">${t}</h2><div>${v}</div>`}
+function download(name,content,type='text/plain'){let a=document.createElement('a'),u=URL.createObjectURL(new Blob([content],{type}));a.href=u;a.download=name;a.click();URL.revokeObjectURL(u)}
+function downloadDoc(){download('document.txt',($('#doctitle').value||'')+'\n\n'+($('#doctext').value||''))}
+function addCustomer(){let name=$('#cname').value.trim(),mobile=$('#cmobile').value.trim();if(!name||!mobile)return alert('নাম ও মোবাইল দিন');db.customers.push({name,mobile,note:$('#cnote').value});save()}
+function addJob(){let title=$('#jtitle').value.trim();if(!title)return alert('কাজের নাম লিখুন');db.jobs.push({customer:$('#jcustomer').value,mobile:$('#jmobile').value,title,status:$('#jstatus').value,date:new Date().toLocaleDateString('en-IN')});save()}
+function jobRows(q=''){return db.jobs.slice().reverse().filter(j=>(j.customer+j.mobile+j.title+j.status).toLowerCase().includes(q.toLowerCase())).map(j=>`<tr><td>${j.date}</td><td>${esc(j.customer)}</td><td>${esc(j.mobile)}</td><td>${esc(j.title)}</td><td><span class="pill">${esc(j.status)}</span></td></tr>`).join('')||'<tr><td colspan="5" class="empty">কোনো কাজ পাওয়া যায়নি</td></tr>'}
+function filterJobs(){$('#jobrows').innerHTML=jobRows($('#jobsearch').value)}
+function addPrint(){db.prints.push({customer:$('#pcustomer').value,type:$('#ptype').value,qty:+$('#pqty').value,amount:+$('#pamount').value,date:new Date().toLocaleDateString('en-IN')});save()}
+function addLoan(){let name=$('#lname').value.trim();if(!name)return alert('গ্রাহকের নাম লিখুন');db.loans.push({name,mobile:$('#lmobile').value,type:$('#ltype').value,amount:+$('#lamount').value,status:$('#lstatus').value});save()}
+function del(k,i){if(confirm('মুছে ফেলবেন?')){db[k].splice(i,1);save()}}
+function backup(){download('himan-capital-finance-backup.json',JSON.stringify(db,null,2),'application/json')}
+function restore(input){let f=input.files[0];if(!f)return;let r=new FileReader();r.onload=()=>{try{let x=JSON.parse(r.result);if(!x.customers||!x.jobs||!x.loans||!x.prints)throw 0;db=x;save();alert('Backup restored')}catch(e){alert('ফাইলটি সঠিক backup নয়')}};r.readAsText(f)}
+function addImages(files,target,cols){let urls=[...files].map(f=>URL.createObjectURL(f));document.getElementById(target).innerHTML=`<div style="display:grid;grid-template-columns:repeat(${cols},1fr);gap:12px">${urls.map(u=>`<div style="border:1px solid #aaa;padding:4px"><img src="${u}" style="width:100%;height:125px;object-fit:contain"></div>`).join('')}</div>`}
+function idPreview(){let f=$('#idfiles').files;if(!f.length)return alert('ID card image দিন');addImages(f,'idpreview',+$('#idcols').value)}
+function photoPreview(){let f=$('#photofile').files[0],n=Math.min(48,Math.max(1,+$('#copies').value||8));if(!f)return alert('একটি ছবি আপলোড করুন');let u=URL.createObjectURL(f);$('#photopreview').innerHTML=`<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px">${Array.from({length:n},()=>`<div style="border:1px solid #aaa;padding:3px"><img src="${u}" style="width:100%;aspect-ratio:7/9;object-fit:cover"></div>`).join('')}</div>`}
+function cvPreview(){let g=id=>esc(document.getElementById(id).value).replace(/\n/g,'<br>');$('#cvpreview').innerHTML=`<h1 style="color:#222;margin:0">${g('cvname')}</h1><p>${g('cvcontact')} · ${g('cvaddress')}</p><hr><h3>Education</h3><p>${g('cvedu')}</p><h3>Skills</h3><p>${g('cvskills')}</p><h3>Experience / Objective</h3><p>${g('cvexp')}</p>`}
+function readyPreview(){let names={leave:'ছুটির আবেদন',address:'ঠিকানা সংশোধনের আবেদন',general:'সাধারণ দরখাস্ত',income:'আয়ের শংসাপত্রের জন্য আবেদন'},name=esc($('#rname').value),to=esc($('#rto').value),date=esc($('#rdate').value),sub=esc($('#rsubject').value);$('#readypreview').innerHTML=`<p style="text-align:right">তারিখ: ${date}</p><p>প্রাপক,<br>${to}</p><h3 style="text-align:center;text-decoration:underline">${names[$('#template').value]}</h3><p>বিষয়: ${sub}</p><p>মহাশয়/মহাশয়া,<br>বিনীত নিবেদন এই যে, আমি ${name}। ${sub} সংক্রান্ত বিষয়ে আপনার সদয় বিবেচনা ও প্রয়োজনীয় ব্যবস্থা গ্রহণের জন্য আবেদন জানাচ্ছি।</p><p>ধন্যবাদান্তে,<br>বিনীত<br>${name}</p><p>স্বাক্ষর: __________________</p>`}
+function showFile(f,target){if(!f)return;let u=URL.createObjectURL(f);document.getElementById(target).innerHTML=`<img src="${u}" style="max-width:100%;max-height:260px;margin-top:12px">`}
+function downloadText(){download('handwriting-text.txt',$('#hwtext').value)}
+function copyText(){navigator.clipboard?.writeText($('#hwtext').value).then(()=>alert('Copied')).catch(()=>alert('Copy not available'))}
+render();
+</script>
+<div id="himanWelcome" class="himan-welcome">
+  <div class="welcome-logo">HIMAN <span>CAPITAL FINANCE</span></div>
+  <div class="welcome-person" aria-hidden="true"><svg class="welcome-human-svg" viewBox="0 0 240 250" role="img" aria-label="3D style person greeting with folded hands">
+<defs>
+ <linearGradient id="skin" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffe0b7"/><stop offset=".55" stop-color="#d99a69"/><stop offset="1" stop-color="#9e5b3c"/></linearGradient>
+ <linearGradient id="suit" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#273f67"/><stop offset=".5" stop-color="#101b31"/><stop offset="1" stop-color="#050b18"/></linearGradient>
+ <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff0a9"/><stop offset=".5" stop-color="#d6a33c"/><stop offset="1" stop-color="#805316"/></linearGradient>
+ <radialGradient id="face" cx=".35" cy=".25"><stop stop-color="#ffe9cb"/><stop offset=".7" stop-color="#e6ad7d"/><stop offset="1" stop-color="#a96546"/></radialGradient>
+ <filter id="shadow" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="5"/></filter>
+</defs>
+<ellipse cx="120" cy="235" rx="72" ry="10" fill="#000" opacity=".48" filter="url(#shadow)"/>
+<circle cx="120" cy="118" r="105" fill="none" stroke="url(#gold)" stroke-width="2" opacity=".65"/>
+<!-- body -->
+<path d="M52 225 Q54 164 82 145 L105 137 L135 137 L158 145 Q186 164 188 225Z" fill="url(#suit)" stroke="#b88b43" stroke-width="2"/>
+<path d="M103 139 L120 166 L137 139 L129 225 L111 225Z" fill="#f1e8d6"/>
+<path d="M111 162 L120 174 L129 162 L124 225 L116 225Z" fill="#b78a3e"/>
+<!-- neck -->
+<path d="M104 116 L104 145 Q120 160 136 145 L136 116Z" fill="url(#skin)"/>
+<!-- ears and face -->
+<ellipse cx="82" cy="82" rx="10" ry="17" fill="#c9825e"/><ellipse cx="158" cy="82" rx="10" ry="17" fill="#c9825e"/>
+<path d="M85 54 Q88 25 120 25 Q152 25 155 55 L151 104 Q145 130 120 137 Q95 130 89 104Z" fill="url(#face)" stroke="#a86748" stroke-width="1.5"/>
+<!-- hair -->
+<path d="M83 75 Q74 38 100 24 Q129 8 153 29 Q171 43 158 77 L151 58 Q135 66 119 54 Q103 70 88 64Z" fill="#17131a"/>
+<path d="M90 47 Q104 19 130 25 Q143 26 152 41 Q130 37 117 47 Q103 54 90 47Z" fill="#34212a"/>
+<!-- face details -->
+<path d="M101 83 Q108 78 115 83" fill="none" stroke="#53352d" stroke-width="2.4" stroke-linecap="round"/>
+<path d="M125 83 Q132 78 139 83" fill="none" stroke="#53352d" stroke-width="2.4" stroke-linecap="round"/>
+<ellipse cx="109" cy="88" rx="2.7" ry="3.5" fill="#241c1b"/><ellipse cx="131" cy="88" rx="2.7" ry="3.5" fill="#241c1b"/>
+<path d="M119 88 L116 103 Q120 107 124 103" fill="none" stroke="#b66e55" stroke-width="2" stroke-linecap="round"/>
+<path d="M108 115 Q120 123 132 115" fill="none" stroke="#8f3f3b" stroke-width="2.5" stroke-linecap="round"/>
+<!-- arms bent inward -->
+<path d="M68 165 Q49 174 63 194 L94 211 L108 190 L87 173Z" fill="url(#suit)" stroke="#b88b43" stroke-width="2"/>
+<path d="M172 165 Q191 174 177 194 L146 211 L132 190 L153 173Z" fill="url(#suit)" stroke="#b88b43" stroke-width="2"/>
+<!-- forearms -->
+<path d="M76 185 Q93 188 111 165 L124 180 Q109 207 89 211Z" fill="url(#skin)" stroke="#b47755" stroke-width="1.5"/>
+<path d="M164 185 Q147 188 129 165 L116 180 Q131 207 151 211Z" fill="url(#skin)" stroke="#b47755" stroke-width="1.5"/>
+<!-- folded palms and fingers -->
+<path d="M111 85 Q104 91 105 110 L110 143 Q113 151 120 151 Q127 151 130 143 L135 110 Q136 91 129 85 Q125 82 122 91 L120 119 L118 91 Q115 82 111 85Z" fill="url(#skin)" stroke="#9f634a" stroke-width="1.5"/>
+<path d="M108 96 Q111 89 114 96 L116 125 M116 91 Q120 84 123 93 L123 126 M124 93 Q129 88 131 97 L128 125" fill="none" stroke="#ffe7c8" stroke-width="2" stroke-linecap="round"/>
+<path d="M109 141 Q120 148 131 141" fill="none" stroke="#a86448" stroke-width="1.4"/>
+<!-- gold cuffs -->
+<path d="M82 199 L96 207 L91 216 L77 207Z M144 207 L158 199 L163 207 L149 216Z" fill="url(#gold)"/>
+</svg></div>
+  <div class="welcome-greeting">🙏 নমস্কার! স্বাগতম</div>
+  <div class="welcome-sub">আপনার ডিজিটাল পরিষেবা কেন্দ্রে আপনাকে স্বাগত</div>
+  <div class="welcome-loader"><i></i></div>
+  <button class="btn" onclick="closeHimanWelcome()">Enter Dashboard</button>
+</div>
+<button id="himanBotToggle" class="himan-bot-toggle" onclick="toggleHimanBot()">🤖 HIMAN AI</button>
+<div id="himanBot" class="himan-bot">
+  <div class="bot-head">🤖 HIMAN Smart Assistant <button onclick="toggleHimanBot()">×</button></div>
+  <div id="himanBotMsgs" class="bot-msgs"><div class="bot-msg">নমস্কার! আমি HIMAN Assistant-এর প্রাথমিক ডেমো। কোন পরিষেবাটি খুঁজছেন?</div></div>
+  <div class="bot-input"><input id="himanBotText" placeholder="আপনার প্রশ্ন লিখুন..." onkeydown="if(event.key==='Enter')sendHimanBot()"><button class="btn" onclick="sendHimanBot()">Send</button></div>
+  <small>ডেমো মোড: প্রকৃত AI উত্তর পেতে নিরাপদ AI API Backend সংযোগ প্রয়োজন।</small>
+</div>
+<style>
+.himan-welcome{position:fixed;inset:0;z-index:99999;background:radial-gradient(circle at 50% 30%,#443116,#090909 65%);display:flex;flex-direction:column;align-items:center;justify-content:center;color:#f6dfaa;text-align:center;transition:opacity .6s}
+.himan-welcome.hide{opacity:0;pointer-events:none}
+.welcome-logo{font-size:clamp(26px,6vw,48px);font-weight:950;letter-spacing:4px;text-shadow:0 4px 18px #d9a44188}
+.welcome-logo span{display:block;font-size:13px;letter-spacing:6px}
+.welcome-person{width:min(230px,52vw);height:220px;margin:10px 0 2px;filter:drop-shadow(0 16px 20px #0009);display:flex;align-items:center;justify-content:center}.welcome-human-svg{width:100%;height:100%;overflow:visible;animation:humanFloat 3.2s ease-in-out infinite}@keyframes humanFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+.welcome-greeting{font-size:30px;font-weight:800}.welcome-sub{margin:8px 0 22px;color:#e2d0a8}
+.welcome-loader{width:180px;height:4px;background:#54452b;border-radius:8px;margin:0 0 24px;overflow:hidden}
+.welcome-loader i{display:block;height:100%;width:40%;background:#e7bd66;animation:welcomeLoad 2s ease-in-out infinite}
+@keyframes welcomeLoad{from{transform:translateX(-110%)}to{transform:translateX(360%)}}
+.himan-bot-toggle{position:fixed;right:18px;bottom:18px;z-index:9990;border:1px solid #d5a84d;background:linear-gradient(135deg,#f3d28a,#a97922);color:#17120a;padding:13px 17px;border-radius:30px;font-weight:900;box-shadow:0 8px 30px #0008}
+.himan-bot{display:none;position:fixed;right:18px;bottom:78px;width:min(360px,calc(100vw - 36px));height:440px;z-index:9991;background:#14120e;border:1px solid #b58a3c;border-radius:16px;box-shadow:0 15px 50px #000b;overflow:hidden;color:#f8e8c5}
+.himan-bot.open{display:flex;flex-direction:column}.bot-head{padding:14px;background:#2a2113;font-weight:800}.bot-head button{float:right;background:none;color:white;border:0;font-size:22px}
+.bot-msgs{padding:12px;overflow:auto;flex:1}.bot-msg{background:#292317;border:1px solid #514126;border-radius:12px;padding:10px;margin:8px 0;max-width:90%}.bot-msg.user{margin-left:auto;background:#44331a}
+.bot-input{display:flex;gap:6px;padding:10px}.bot-input input{min-width:0}.himan-bot small{padding:0 10px 10px;color:#b8a783}
+@media print{.himan-welcome,.himan-bot,.himan-bot-toggle{display:none!important}}
+</style>
+<script>
+function closeHimanWelcome(){const w=document.getElementById('himanWelcome');w.classList.add('hide');setTimeout(()=>w.remove(),650)}
+setTimeout(()=>{if(document.getElementById('himanWelcome'))closeHimanWelcome()},4200);
+function toggleHimanBot(){document.getElementById('himanBot').classList.toggle('open')}
+function sendHimanBot(){
+ const input=document.getElementById('himanBotText'),txt=input.value.trim();if(!txt)return;
+ const box=document.getElementById('himanBotMsgs');box.insertAdjacentHTML('beforeend','<div class="bot-msg user">'+himanEscape(txt)+'</div>');input.value='';
+ let reply='আমি এই ডেমোতে সাধারণ নির্দেশনা দিতে পারি। নির্দিষ্ট টুল খুলতে বামদিকের মেনু ব্যবহার করুন।';
+ if(/passport|পাসপোর্ট|ছবি/.test(txt.toLowerCase()))reply='Passport Photo Maker খুলতে বামদিকের Document Studio থেকে Passport Photo Maker নির্বাচন করুন।';
+ else if(/ayushman|আয়ুষ্মান|আয়ুষ্মান/.test(txt.toLowerCase()))reply='Ayushman Card Print PRO খুলে PDF বা ছবি আপলোড করুন, Front/Back Preview দেখে Crop Adjust করুন।';
+ else if(/project|প্রজেক্ট|প্রজেক্ট/.test(txt.toLowerCase()))reply='Project Studio থেকে School, College বা University নির্বাচন করে কভার পেজ তৈরি করুন।';
+ else if(/pdf/.test(txt.toLowerCase()))reply='PDF Studio-এর কাজগুলো এই সংস্করণে সম্পূর্ণ যুক্ত হয়নি।';
+ box.insertAdjacentHTML('beforeend','<div class="bot-msg">'+himanEscape(reply)+'</div>');box.scrollTop=box.scrollHeight;
+}
+function himanEscape(s){return s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+</script>
+</body></html>
