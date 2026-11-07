@@ -253,26 +253,6 @@ function ayPrint(){
 }
 
 
-let imImage=null, imOutput=null;
-function imLoad(input){
- const f=input.files?.[0];if(!f)return;const u=URL.createObjectURL(f),img=new Image();
- img.onload=()=>{imImage=img;document.getElementById('imwidth').value=img.naturalWidth;document.getElementById('imheight').value=img.naturalHeight;imProcess();URL.revokeObjectURL(u)};
- img.onerror=()=>alert('ছবিটি খোলা যায়নি।');img.src=u;
-}
-function imPreset(w,h){document.getElementById('imwidth').value=w;document.getElementById('imheight').value=h;imProcess()}
-function imProcess(){
- if(!imImage)return alert('আগে ছবি আপলোড করুন।');
- const w=Math.max(1,Math.min(6000,+document.getElementById('imwidth').value||413)),h=Math.max(1,Math.min(6000,+document.getElementById('imheight').value||531));
- const c=document.getElementById('imcanvas');c.width=w;c.height=h;const ctx=c.getContext('2d');
- const bg=document.getElementById('imbg').value;if(bg!=='none'){ctx.fillStyle=bg;ctx.fillRect(0,0,w,h)}
- const scale=Math.max(w/imImage.naturalWidth,h/imImage.naturalHeight),sw=imImage.naturalWidth*scale,sh=imImage.naturalHeight*scale;
- ctx.drawImage(imImage,(w-sw)/2,(h-sh)/2,sw,sh);
- const fmt=document.getElementById('imformat').value,q=(+document.getElementById('imquality').value)/100;
- imOutput=c.toDataURL(fmt,q);document.getElementById('iminfo').textContent=`${w} × ${h} px · ${document.getElementById('imdpi').value} DPI (print metadata নয়) · আনুমানিক ${Math.round(imOutput.length*.75/1024)} KB`;
-}
-function imDownload(){if(!imOutput)return alert('আগে ছবি প্রসেস করুন।');const a=document.createElement('a');a.href=imOutput;a.download='himan-edited-photo.'+(document.getElementById('imformat').value==='image/png'?'png':document.getElementById('imformat').value==='image/webp'?'webp':'jpg');a.click()}
-function imPrint(){if(!imOutput)return alert('আগে ছবি প্রসেস করুন।');const w=window.open('','_blank');w.document.write(`<html><head><title>HIMAN Photo Print</title><style>@page{size:A4;margin:12mm}body{font-family:Arial}img{max-width:100%;max-height:100mm;object-fit:contain}</style></head><body><img src="${imOutput}"><script>window.onload=()=>window.print()<\/script></body></html>`);w.document.close()}
-
 function maker(title,desc,kind){return `<div class="pagehead"><div><h1>${title}</h1><div class="sub">${desc}</div></div></div><div class="panel"><div class="field"><label>Document Title</label><input id="doctitle" placeholder="Document title"></div><div class="field" style="margin-top:12px"><label>Document Text</label><textarea id="doctext" style="min-height:260px" placeholder="এখানে ডকুমেন্টের লেখা লিখুন বা পেস্ট করুন..."></textarea></div><div class="actions"><button class="btn" onclick="docPreview()">Preview A4</button><button class="btn secondary" onclick="printArea('docpreview')">Print / Save PDF</button><button class="btn secondary" onclick="downloadDoc()">Download .txt</button></div><div id="docpreview" class="preview" style="margin-top:15px"></div></div>`}
 function render(){let p=location.hash.slice(1)||'dashboard';if(!pages[p])p='dashboard';$('#page').innerHTML=pages[p]();$$('.nav button').forEach(b=>b.classList.toggle('active',b.dataset.page===p));$('#today').textContent=new Date().toLocaleDateString('en-IN',{day:'2-digit',month:'short',year:'numeric'});$('#year').textContent=new Date().getFullYear();if(p==='handwriting')$('#hwfile')?.addEventListener('change',e=>showFile(e.target.files[0],'hwimg'))}
 function go(p){location.hash=p;$('#sidebar').classList.remove('open')}window.addEventListener('hashchange',render);$('#menu').onclick=()=>$('#sidebar').classList.toggle('open');$$('.nav button').forEach(b=>b.onclick=()=>go(b.dataset.page));
@@ -324,7 +304,7 @@ function sendHimanBot(){
  box.insertAdjacentHTML('beforeend','<div class="bot-msg">'+himanEscape(reply)+'</div>');box.scrollTop=box.scrollHeight;
 }
 function himanEscape(s){return s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
-</script>
+<\/script>
 </body></html>`);w.document.close();w.focus();w.print()}
 function docPreview(){let t=esc($('#doctitle').value||'Document'),v=esc($('#doctext').value).replace(/\n/g,'<br>');$('#docpreview').innerHTML=`<h2 style="text-align:center">${t}</h2><div>${v}</div>`}
 function download(name,content,type='text/plain'){let a=document.createElement('a'),u=URL.createObjectURL(new Blob([content],{type}));a.href=u;a.download=name;a.click();URL.revokeObjectURL(u)}
