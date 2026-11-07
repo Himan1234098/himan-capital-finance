@@ -220,11 +220,11 @@ ayushman:()=>`<div class="pagehead"><div><h1>🪪 HIMAN Ayushman Card Print PRO<
 <div class="panel">
 <div class="formgrid">
 <div class="field full"><label>Ayushman Card PDF / Image Upload (একসঙ্গে একাধিক, সর্বোচ্চ ৫টি)</label><input id="ayfiles" type="file" accept="application/pdf,image/*" multiple></div>
-<div class="field"><label>PDF Layout</label><select id="aylayout"><option value="two">2-page PDF: Page 1 Front, Page 2 Back</option><option value="vertical">1-page PDF: Front উপরে, Back নিচে</option><option value="horizontal">1-page PDF: Front বামে, Back ডানে</option><option value="same">একই ছবি Front ও Back হিসেবে</option></select></div>
-<div class="field"><label>Card Size</label><select id="aysize"><option value="pvc">PVC / Smart Card — 8.56 × 5.4 cm</option><option value="custom">A4 Fit Preview (নিজে মাপ ঠিক করুন)</option></select></div>
+<div class="field"><label>PDF Layout (select how front/back appear in your PDF)</label><select id="aylayout"><option value="auto">Auto: 2 pages or 1-page side-by-side</option><option value="two">2-page PDF: Page 1 Front, Page 2 Back</option><option value="vertical">1-page PDF: Front উপরে, Back নিচে</option><option value="horizontal">1-page PDF: Front বামে, Back ডানে</option><option value="same">একই ছবি Front ও Back হিসেবে</option></select></div>
+<div class="field"><label>Optional Back Image (for a single front image)</label><input id="aybackfile" type="file" accept="image/*"></div><div class="field"><label>Card Size</label><select id="aysize"><option value="pvc">PVC / Smart Card — 8.56 × 5.4 cm</option><option value="custom">A4 Fit Preview (নিজে মাপ ঠিক করুন)</option></select></div>
 </div>
 <div class="actions"><button class="btn" onclick="ayLoadFiles()">Upload & Create Preview</button><button class="btn secondary" onclick="ayClear()">Clear All</button></div>
-<div id="aystatus" class="muted" style="margin-top:10px">এখনও কোনো ফাইল যোগ করা হয়নি।</div>
+<div id="aystatus" class="muted" style="margin-top:10px">No files added yet.</div>
 </div>
 <div class="panel" style="margin-top:15px">
 <h3>Card Adjust Settings</h3>
@@ -313,34 +313,45 @@ async function ayLoadFiles(){
    else {const im=new Image(),url=URL.createObjectURL(f);await new Promise((res,rej)=>{im.onload=res;im.onerror=rej;im.src=url});const c=document.createElement('canvas');c.width=im.naturalWidth;c.height=im.naturalHeight;c.getContext('2d').drawImage(im,0,0);pages=[c];URL.revokeObjectURL(url)}
    ayPending.push({name:f.name,pages});
   }
+  const backFile=document.getElementById('aybackfile')?.files?.[0];
+  if(backFile){if(ayPending.length!==1)throw new Error('A separate back image can only be assigned to one card at a time.');ayPending[0].backOverride=await ayReadBackImage(backFile)}
   ayRebuild();document.getElementById('aystatus').textContent=ayPending.length+'টি ফাইল Preview-এর জন্য প্রস্তুত। Front/Back দেখে নিন।';
  }catch(e){document.getElementById('aystatus').textContent='সমস্যা: '+e.message;alert(e.message)}
+}
+async function ayReadBackImage(file){
+ const url=URL.createObjectURL(file);
+ try{const im=new Image();await new Promise((res,rej)=>{im.onload=res;im.onerror=rej;im.src=url});const c=document.createElement('canvas');c.width=im.naturalWidth;c.height=im.naturalHeight;c.getContext('2d').drawImage(im,0,0);return c}
+ finally{URL.revokeObjectURL(url)}
 }
 function ayRebuild(){
  const layout=document.getElementById('aylayout').value,box=document.getElementById('aynewpreview');let html='';
  ayPending.forEach((item,i)=>{
-  let front,back;
-  if(item.pages.length>1&&layout==='two'){front=item.pages[0];back=item.pages[1]}
-  else {front=item.pages[0];back=item.pages[0]}
-  const fc=ayCropCanvas(front,'front',item.pages.length>1&&layout==='two'?'same':layout);
-  const bc=ayCropCanvas(back,'back',item.pages.length>1&&layout==='two'?'same':layout);
-  item.front=ayDataUrl(fc);item.back=ayDataUrl(bc);
-  html+=`<div class="ay-side"><b>${esc(item.name)} — FRONT</b><img src="${item.front}"><small>Front Preview</small></div><div class="ay-side"><b>${esc(item.name)} — BACK</b><img src="${item.back}"><small>Back Preview</small></div>`;
+  const twoPages=item.pages.length>1;
+  let effective=layout==='auto'?(twoPages?'two':'horizontal'):layout;
+  let front=item.pages[0],back=null;
+  if(effective==='two')back=twoPages?item.pages[1]:null;
+  else if(effective==='horizontal'||effective==='vertical')back=item.pages[0];
+  if(item.backOverride){back=item.backOverride;effective='override'}
+  const fc=ayCropCanvas(front,'front',effective==='two'||effective==='override'?'same':effective);
+  item.front=ayDataUrl(fc);
+  item.back=back?ayDataUrl(ayCropCanvas(back,'back',effective==='two'||effective==='override'?'same':effective)):null;
+  html+=`<div class="ay-side"><b>${esc(item.name)} — FRONT</b><img src="${item.front}"><small>Front Preview</small></div><div class="ay-side"><b>${esc(item.name)} — BACK</b>${item.back?`<img src="${item.back}">`:'<p style="color:#ffd08a">Back missing — upload a back image or select the correct PDF layout.</p>'}<small>Back Preview</small></div>`;
  });
- box.innerHTML=html||'<div class="empty">আগে PDF / Image আপলোড করুন।</div>';
+ box.innerHTML=html||'<div class="empty">Upload a PDF or image first.</div>';
 }
 function ayAddAll(){
- if(!ayPending.length)return alert('আগে ফাইল আপলোড করুন।');
+ if(!ayPending.length)return alert('Upload a PDF or image first.');
+ if(ayPending.some(x=>!x.front||!x.back))return alert('Back image is missing. Please provide a separate back image or choose the correct PDF layout.');
  for(const item of ayPending){if(ayCards.length>=5)break;ayCards.push({name:item.name,front:item.front,back:item.back})}
- ayPending=[];document.getElementById('aynewpreview').innerHTML='';document.getElementById('aystatus').textContent='কার্ড Print List-এ যোগ হয়েছে।';
- document.getElementById('ayfiles').value='';ayRenderList();
+ ayPending=[];document.getElementById('aynewpreview').innerHTML='';document.getElementById('aystatus').textContent='Cards added to the print list.';
+ document.getElementById('ayfiles').value='';document.getElementById('aybackfile').value='';ayRenderList();
 }
 function ayRenderList(){
  document.getElementById('aycount').textContent=ayCards.length+' / 5';
  document.getElementById('aylist').innerHTML=ayCards.map((c,i)=>`<div class="ay-card-pair"><div><b>Front</b><img src="${c.front}"></div><div><b>Back</b><img src="${c.back}"></div><div style="grid-column:1/-1;font-size:12px">${esc(c.name)}</div><button class="btn danger" onclick="ayDelete(${i})">Delete Card</button></div>`).join('')||'<div class="empty">কোনো কার্ড যোগ করা হয়নি।</div>';
 }
 function ayDelete(i){ayCards.splice(i,1);ayRenderList()}
-function ayClear(){ayPending=[];ayCards=[];document.getElementById('ayfiles').value='';document.getElementById('aynewpreview').innerHTML='';document.getElementById('aystatus').textContent='সব ফাইল পরিষ্কার করা হয়েছে।';ayRenderList()}
+function ayClear(){ayPending=[];ayCards=[];document.getElementById('ayfiles').value='';document.getElementById('aybackfile').value='';document.getElementById('aynewpreview').innerHTML='';document.getElementById('aystatus').textContent='সব ফাইল পরিষ্কার করা হয়েছে।';ayRenderList()}
 function ayPrint(){
  if(!ayCards.length)return alert('Print List-এ কার্ড যোগ করুন।');
  const root=document.createElement('div');root.id='ayprintroot';
